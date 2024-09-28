@@ -24,12 +24,12 @@ public class PaymentController implements PaymentApi {
     private final RecordMapper recordMapper;
 
     @Override
-    public ResponseEntity<UUID> save(PaymentDTO paymentDTO) {
-        return ResponseEntity.ok(UUID.randomUUID());
+    public ResponseEntity<UUID> save(PaymentDTO payment) {
+        return ResponseEntity.ok(paymentService.save(paymentMapper.toModel(payment)));
     }
 
     @Override
     public ResponseEntity<List<RecordDTO>> findAll() {
-        return ResponseEntity.ok(List.of());
+        return ResponseEntity.ok(recordMapper.toDTOs(paymentService.findAll()));
     }
 }
