@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+  title: Payments Management API
+  version: 1.0.0
+  description: A simple API to manage payments
+
+servers:
+  - url: https://com.ntt/bbva
+
+paths:
+  /payment:
+    post:
+      operationId: save
+      summary: Registra en pago en el sistema y devuelve el id de la operación
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './components.yaml#/components/schemas/PaymentDTO'
+      responses:
+        '200':
+          description: Se responde con éxito en la operación
+          content:
+            application/json:
+              schema:
+                $ref: './components.yaml#/components/schemas/UUID'
+    get:
+      operationId: findAll
+      summary: Consulta el listado de pagos registrados
+      responses:
+        '200':
+          description: Se devuelve una lista de registros, cada cual contiene el id de la operación y el pago registrado
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: './components.yaml#/components/schemas/RecordDTO'

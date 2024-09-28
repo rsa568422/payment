@@ -1,0 +1,51 @@
+components:
+  schemas:
+
+    PaymentDTO:
+      type: object
+      properties:
+        cardNumber:
+          type: string
+          description: Identificador de la tarjeta de crédito
+          example: "0000 0000 0000 0000"
+        amount:
+          type: number
+          format: double
+          description: Monto del recibo
+          example: 139.65
+        date:
+          type: string
+          description: Fecha de pago en formato YYYY-MM-DD
+          example: "2024-09-28"
+        description:
+          type: string
+          description: Descripción del pago (opcional)
+          example: "Pago del recibo de luz"
+      required:
+        - cardNumber
+        - amount
+        - date
+      additionalProperties: false
+
+    RecordDTO:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UUID'
+        payment:
+          $ref: '#/components/schemas/PaymentDTO'
+        createdAt:
+          type: string
+          description: Fecha de registro de la operación en formato YYYY-MM-DD HH:MM:SS
+          example: "2024-09-28 12:00:00"
+      required:
+        - id
+        - payment
+        - createdAt
+      additionalProperties: false
+
+    UUID:
+      type: string
+      format: uuid
+      description: Un identificador único universal (UUID)
+      example: "123e4567-e89b-12d3-a456-426614174000"
