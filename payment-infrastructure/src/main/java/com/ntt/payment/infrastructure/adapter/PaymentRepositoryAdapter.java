@@ -3,8 +3,8 @@ package com.ntt.payment.infrastructure.adapter;
 import com.ntt.payment.domain.model.Payment;
 import com.ntt.payment.domain.model.Record;
 import com.ntt.payment.domain.repository.PaymentRepository;
-import com.ntt.payment.infrastructure.mapper.PaymentMapper;
-import com.ntt.payment.infrastructure.mapper.RecordMapper;
+import com.ntt.payment.infrastructure.mapper.PaymentEntityMapper;
+import com.ntt.payment.infrastructure.mapper.RecordEntityMapper;
 import com.ntt.payment.infrastructure.repository.PaymentJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -18,9 +18,9 @@ public class PaymentRepositoryAdapter implements PaymentRepository {
 
     private final PaymentJpaRepository paymentJpaRepository;
 
-    private final PaymentMapper paymentMapper;
+    private final PaymentEntityMapper paymentMapper;
 
-    private final RecordMapper recordMapper;
+    private final RecordEntityMapper recordMapper;
 
     @Override
     public List<Record> findAll() {
