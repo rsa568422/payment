@@ -13,6 +13,8 @@ import java.util.UUID;
 
 public final class Data {
 
+    private Data() {}
+
     public static final String CARD_NUMBER = "0000 0000 0000 0001";
 
     public static final LocalDate DATE = LocalDate.of(2024, Month.SEPTEMBER, 28);
