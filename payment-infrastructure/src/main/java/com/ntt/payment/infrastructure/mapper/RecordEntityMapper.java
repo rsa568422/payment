@@ -7,8 +7,8 @@ import org.mapstruct.Mapping;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {PaymentMapper.class})
-public interface RecordMapper {
+@Mapper(componentModel = "spring", uses = {PaymentEntityMapper.class})
+public interface RecordEntityMapper {
 
     @Mapping(target = "payment", source = "payment")
     Record toModel(PaymentEntity payment);

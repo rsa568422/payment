@@ -7,7 +7,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface PaymentMapper {
+public interface PaymentEntityMapper {
 
     Payment toModel(PaymentEntity payment);
 

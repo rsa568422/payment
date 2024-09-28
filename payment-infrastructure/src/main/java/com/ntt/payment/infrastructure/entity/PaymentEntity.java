@@ -2,10 +2,12 @@ package com.ntt.payment.infrastructure.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -13,12 +15,14 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Data
-@Builder
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "payments")
 public class PaymentEntity {
 
     @Id
+    @GeneratedValue
     private UUID id;
 
     @Column(name = "card_number", length = 19, nullable = false)
