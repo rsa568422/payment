@@ -4,8 +4,9 @@ import com.ntt.payment.domain.model.Payment;
 import com.ntt.payment.infrastructure.entity.PaymentEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface PaymentMapper {
 
     @Mapping(target = "createdAt", expression = "java(java.time.LocalDateTime.now())")
