@@ -57,5 +57,14 @@ Las mutaciones son cambios generados en nuestro código por dicha herramienta qu
 
 [Informe de PIT](./report/index.html)
 
-| Paquete                                 | Número de clases | Cobertura de líneas | Cobertura de mutaciones | Calidad de los tests |
-|-----------------------------------------|------------------|---------------------|-------------------------|----------------------|
+| Paquete                                      | Número de clases | Cobertura de líneas | Cobertura de mutaciones | Calidad de los tests |
+|----------------------------------------------|------------------|---------------------|-------------------------|----------------------|
+| com.ntt.payment.application.controller       | 1                | 100% (3/3)          | 100% (2/2)              | 100% (2/2)           |
+| com.ntt.payment.application.controller.api   | 2                | 0% (0/30)           | 0% (0/13)               | 100% (0/0)           |        
+| com.ntt.payment.application.controller.model | 2                | 43%  (33/77)        | 37% (15/41)             | 79% (15/19)          |
+| com.ntt.payment.application.mapper           | 3                | 100% (38/38)        | 100% (21/21)            | 100% (21/21)         |
+| com.ntt.payment.domain.model                 | 2                | 100% (11/11)        | 39% (31/80)             | 89% (31/35)          |
+| com.ntt.payment.domain.service               | 1                | 100% (3/3)          | 100% (2/2)              | 100% (2/2)           |                  
+| com.ntt.payment.infrastructure.adapter       | 1                | 100% (3/3)          | 100% (2/2)              | 100% (2/2)           |          
+| com.ntt.payment.infrastructure.entity        | 1                | 100% (9/9)          | 10% (6/59)              | 100% (6/6)           |           
+| com.ntt.payment.infrastructure.mapper        | 2                | 100% (33/33)        | 100% (14/14)            | 100% (14/14)         |
