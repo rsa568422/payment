@@ -29,8 +29,7 @@ public final class Data {
 
     public static final LocalDateTime CREATED_AT = LocalDateTime.of(DATE, TIME);
 
-    public static final Payment PAYMENT =
-            Payment.builder().cardNumber(CARD_NUMBER).amount(AMOUNT).date(DATE).description(DESCRIPTION).build();
+    public static final Payment PAYMENT = new Payment(CARD_NUMBER, AMOUNT, DATE, DESCRIPTION);
 
     public static final PaymentEntity PAYMENT_ENTITY =
             new PaymentEntity(null, CARD_NUMBER, AMOUNT, DATE, DESCRIPTION, CREATED_AT);
@@ -38,5 +37,5 @@ public final class Data {
     public static final PaymentEntity SAVED_PAYMENT_ENTITY =
             new PaymentEntity(ID, CARD_NUMBER, AMOUNT, DATE, DESCRIPTION, CREATED_AT);
 
-    public static final Record RECORD = Record.builder().id(ID).payment(PAYMENT).createdAt(CREATED_AT).build();
+    public static final Record RECORD = new Record(ID, PAYMENT, CREATED_AT);
 }

@@ -35,14 +35,12 @@ public final class Data {
 
     public static final String DESCRIPTION_2 = "Pago del IBI";
 
-    public static final Payment PAYMENT_1 =
-            Payment.builder().cardNumber(CARD_NUMBER).amount(AMOUNT_1).date(DATE).description(DESCRIPTION_1).build();
+    public static final Payment PAYMENT_1 = new Payment(CARD_NUMBER, AMOUNT_1, DATE, DESCRIPTION_1);
 
-    public static final Payment PAYMENT_2 =
-            Payment.builder().cardNumber(CARD_NUMBER).amount(AMOUNT_2).date(DATE).description(DESCRIPTION_2).build();
+    public static final Payment PAYMENT_2 = new Payment(CARD_NUMBER, AMOUNT_2, DATE, DESCRIPTION_2);
 
     public static final List<Record> RECORDS = List.of(
-            Record.builder().id(ID_1).payment(PAYMENT_1).createdAt(LocalDateTime.of(DATE, TIME_1)).build(),
-            Record.builder().id(ID_2).payment(PAYMENT_2).createdAt(LocalDateTime.of(DATE, TIME_2)).build()
+            new Record(ID_1, PAYMENT_1, LocalDateTime.of(DATE, TIME_1)),
+            new Record(ID_2, PAYMENT_2, LocalDateTime.of(DATE, TIME_2))
     );
 }
