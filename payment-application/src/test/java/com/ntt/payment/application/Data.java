@@ -30,10 +30,9 @@ public final class Data {
 
     public static final LocalDateTime CREATED_AT = LocalDateTime.of(DATE, TIME);
 
-    public static final Payment PAYMENT =
-            Payment.builder().cardNumber(CARD_NUMBER).amount(AMOUNT).date(DATE).description(DESCRIPTION).build();
+    public static final Payment PAYMENT = new Payment(CARD_NUMBER, AMOUNT, DATE, DESCRIPTION);
 
-    public static final Record RECORD = Record.builder().id(ID).payment(PAYMENT).createdAt(CREATED_AT).build();
+    public static final Record RECORD = new Record(ID, PAYMENT, CREATED_AT);
 
     public static PaymentDTO PAYMENT_DTO() {
         var dto = new PaymentDTO();
